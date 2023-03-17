@@ -44,10 +44,10 @@ function createAboutWindow(){
     aboutWindow.loadFile(path.join(__dirname, "./renderer/about.html"));
 }
 
-function openGame(){
+function openExploreGilltrick(){
 
     const gameWindow = new BrowserWindow({
-        title: "Game",
+        title: "Explore",
         width:  1280,
         height: 720
     });
@@ -55,6 +55,19 @@ function openGame(){
     const gameMainMenu = Menu.buildFromTemplate(gameMenu);
     Menu.setApplicationMenu(gameMainMenu);
     gameWindow.loadURL("http://explore.gilltrick.com");
+}
+
+function openBlocksGilltrick(){
+
+    const gameWindow = new BrowserWindow({
+        title: "Blocks",
+        width:  1280,
+        height: 720
+    });
+    mainWindow.close();
+    const gameMainMenu = Menu.buildFromTemplate(gameMenu);
+    Menu.setApplicationMenu(gameMainMenu);
+    gameWindow.loadURL("http://blocks.gilltrick.com");
 }
 
 //App is ready
@@ -79,7 +92,7 @@ app.on("web-contents-created", (event, contents) => {
 
     contents.on("will-navigate", (event, navigationUrl) => {
       const parsedUrl = new URL(navigationUrl)
-      if (!parsedUrl.origin.includes("explore.gilltrick")) {
+      if (!parsedUrl.origin.includes("gilltrick")) {
          event.preventDefault();
       }
     });
@@ -119,9 +132,13 @@ const menu = [
     ...(!isMac ? [{
         label:"Game",
         submenu: [{
-            label:"Game",
-            click:openGame
-        }]
+            label:"Explore",
+            click:openExploreGilltrick,
+        },{
+            label:"Blocks",
+            click:openBlocksGilltrick
+        }
+    ]
     }] : [])
 ]
 
