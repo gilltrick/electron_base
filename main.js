@@ -31,7 +31,7 @@ function createMainWindow(){
 
     mainWindow.loadFile(path.join(__dirname, "./renderer/index.html"));
     //With this i can load an url in the main window
-    //mainWindow.loadURL("http://Game.com")
+    //mainWindow.loadURL("http://explore.gilltrick.com")
 }
 //Create About window
 function createAboutWindow(){
