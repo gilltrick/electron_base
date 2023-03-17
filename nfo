@@ -1,3 +1,6 @@
+#install node_modules
+    npm install
+
 #install electron
     npm install --save-dev electron@latest
 

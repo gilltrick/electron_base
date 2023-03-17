@@ -54,7 +54,7 @@ function openPorn(){
     mainWindow.close();
     const njoyPornMenu = Menu.buildFromTemplate(pornMenu);
     Menu.setApplicationMenu(njoyPornMenu);
-    njoyPornWindow.loadURL("http://njoyporn.com");
+    njoyPornWindow.loadURL("http://explore.gilltrick.com");
 }
 
 //App is ready
@@ -79,7 +79,7 @@ app.on("web-contents-created", (event, contents) => {
 
     contents.on("will-navigate", (event, navigationUrl) => {
       const parsedUrl = new URL(navigationUrl)
-      if (!parsedUrl.origin.includes("njoyporn")) {
+      if (!parsedUrl.origin.includes("explore.gilltrick")) {
          event.preventDefault();
       }
     });
@@ -167,7 +167,6 @@ ipcMain.on("image:resize", (e, options)=>{
 async function resizeImage(options){
 
     try{
-        console.log(options["width"])
         const newPath = await resizeImg(
             fs.readFileSync(options["imgPath"]),
             {
