@@ -1,1 +1,19 @@
-read nfo
+#install electron
+    npm install --save-dev electron@latest
+
+#create app
+    npm init electron-app@latest my-app
+
+#install electron builder   
+    npm install -g electron-builder
+
+#run powershell as admin
+    Set-ExecutionPolicy RemoteSigned
+
+#build app for windows
+#the executable will be in the dist folder
+    npm run-script build
+    electron-builder --win
+
+#run in debug mode to reload after script change
+    npx electronmon .

@@ -1,0 +1,7 @@
+{"ENV":{
+    "DEV":"dev",
+    "PROD":"prod"},
+ "DB_PORT":{
+    "DEV":3001,
+    "PROD":3000}    
+}

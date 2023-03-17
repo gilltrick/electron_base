@@ -1,0 +1,23 @@
+{
+    "name": "image_resizer_electron",
+    "productName": "Image Resizer",
+    "version": "1.0.0",
+    "icon": "./plugin/one-config/icon.ico",
+    "description": "App to resize image dimensions",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "set NODE_ENV=dev && npx electronmon . --trace-warnings",
+        "build": "node ./plugins/one-config/index.js prepare && electron-builder --win && node ./plugins/one-config/index.js back",
+        "config": "node ./plugins/one-config/index.js config_dev",
+        "hidden": "set NODE_ENV=dev && npx electronmon . --trace-warnings"
+    },
+    "author": "gilltrick.DE",
+    "license": "MIT",
+    "dependencies": {
+        "electron": "^23.1.4",
+        "resize-img": "^2.0.0",
+        "toastify-js": "^1.12.0",
+        "url": "^0.11.0"
+    }
+}
