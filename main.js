@@ -31,7 +31,7 @@ function createMainWindow(){
 
     mainWindow.loadFile(path.join(__dirname, "./renderer/index.html"));
     //With this i can load an url in the main window
-    //mainWindow.loadURL("http://njoyporn.com")
+    //mainWindow.loadURL("http://Game.com")
 }
 //Create About window
 function createAboutWindow(){
@@ -44,17 +44,17 @@ function createAboutWindow(){
     aboutWindow.loadFile(path.join(__dirname, "./renderer/about.html"));
 }
 
-function openPorn(){
+function openGame(){
 
-    const njoyPornWindow = new BrowserWindow({
-        title: "nJoyPorn",
+    const gameWindow = new BrowserWindow({
+        title: "Game",
         width:  1280,
         height: 720
     });
     mainWindow.close();
-    const njoyPornMenu = Menu.buildFromTemplate(pornMenu);
-    Menu.setApplicationMenu(njoyPornMenu);
-    njoyPornWindow.loadURL("http://explore.gilltrick.com");
+    const gameMainMenu = Menu.buildFromTemplate(gameMenu);
+    Menu.setApplicationMenu(gameMainMenu);
+    gameWindow.loadURL("http://explore.gilltrick.com");
 }
 
 //App is ready
@@ -117,16 +117,16 @@ const menu = [
         }]
     }] : []),
     ...(!isMac ? [{
-        label:"Porn",
+        label:"Game",
         submenu: [{
-            label:"Porn",
-            click:openPorn
+            label:"Game",
+            click:openGame
         }]
     }] : [])
 ]
 
-//Porn menu template
-const pornMenu = [
+//Game menu template
+const gameMenu = [
     // {
         // label:"File",
         // submenu:[{
